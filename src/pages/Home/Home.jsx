@@ -18,7 +18,26 @@ const Home = () => {
    
     return (
         <div>
-            <Banner></Banner>
+       <div>
+  <div className="flex w-3/4 mx-auto sm:flex-col md:flex-col lg:flex-row bg-blue-400 rounded-lg">
+    <div className="mt-6 p-4 ">
+      <h4 className="text-5xl text-[#2407ff] font-bold">eStudy</h4>
+      <h3 className="text-3xl text-[#d1ff47] font-bold mt-4"> Start Your
+        <br />
+        Journey With
+        <br />
+        Us
+      </h3>
+      <h3 className="text-3xl text-[#0707ff] font-bold mt-4">Online Study</h3>
+      <p className="text-xl text-gray-500 font-bold mt-4">Our platform is a collaborative learning hub designed to enhance your academic journey. Join study groups, share resources, and achieve academic excellence through collective efforts. Connect with peers, submit assignments, and track your progress seamlessly. Elevate your learning experience with us.</p>
+    </div>
+    <div className="">
+      <img src="https://i.ibb.co/ZBrSVt3/4893928.jpg" alt="" />
+    </div>
+  </div>
+</div>
+
+
 
             <div className='w-3/4 mx-auto text-center py-20'>
                 <div className='flex lg:flex-row flex-col lg:text-center lg:gap-5 gap-8'>
