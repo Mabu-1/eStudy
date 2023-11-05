@@ -1,5 +1,4 @@
 
-import Banner from "./Banner";
 
 import { BiSolidBookAlt } from 'react-icons/bi';
 import { HiOutlineUserGroup } from 'react-icons/hi';
