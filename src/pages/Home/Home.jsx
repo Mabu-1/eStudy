@@ -17,7 +17,7 @@ const Home = () => {
    
     return (
         <div>
-       <div>
+       
   <div className="flex w-3/4 mx-auto sm:flex-col md:flex-col lg:flex-row bg-blue-400 rounded-lg">
     <div className="mt-6 p-4 ">
       <h4 className="text-5xl text-[#2407ff] font-bold">eStudy</h4>
@@ -34,7 +34,7 @@ const Home = () => {
       <img src="https://i.ibb.co/ZBrSVt3/4893928.jpg" alt="" />
     </div>
   </div>
-</div>
+
 
 
 
@@ -68,12 +68,12 @@ const Home = () => {
                                 <input type="checkbox" />
                                 <div className="collapse-title text-xl font-medium flex justify-between">
                                     <div>
-                                    What types of cars do you offer for sale on your website?
+                                    How can I create or join a study group on this platform??
                                     </div>
                                     <button onClick={handleButtonClick}>{buttonText}</button>
                                 </div>
                                 <div className="collapse-content">
-                                    <p> Our website offers a wide range of cars from various brands, including sedans, SUVs, trucks, and more. We aim to provide options to suit different preferences and needs.</p>
+                                    <p> This question can address the process of forming or becoming part of a study group.</p>
                                 </div>
                             </div>
                         </div>
@@ -82,12 +82,12 @@ const Home = () => {
                                 <input type="checkbox" />
                                 <div className="collapse-title text-xl font-medium flex justify-between">
                                     <div>
-                                    Can I finance a car purchase through your website?
+                                    What is the benefit of joining a study group?
                                     </div>
                                     <button onClick={handleButtonClick}>{buttonText}</button>
                                 </div>
                                 <div className="collapse-content">
-                                    <p>Yes, we offer financing options. We work with reputable financial institutions to help you secure a car loan with favorable terms. You can find more information on our financing page.</p>
+                                    <p>Provide guidance on how students can submit their work and assignments through your platform</p>
                                 </div>
                             </div>
                         </div>
@@ -96,12 +96,12 @@ const Home = () => {
                                 <input type="checkbox" />
                                 <div className="collapse-title text-xl font-medium flex justify-between">
                                     <div>
-                                    Are the cars on your website new or used?
+                                    What happens if I have a disagreement or issue within my study group?
                                     </div>
                                     <button onClick={handleButtonClick}>{buttonText}</button>
                                 </div>
                                 <div className="collapse-content">
-                                    <p>We offer both new and used cars. You can browse our inventory to find new models with the latest features or explore our used car listings for more budget-friendly options.</p>
+                                    <p>Offer information on conflict resolution or support options for resolving issues among group members.</p>
                                 </div>
                             </div>
                         </div>
@@ -124,12 +124,12 @@ const Home = () => {
                                 <input type="checkbox" />
                                 <div className="collapse-title text-xl font-medium flex justify-between">
                                     <div>
-                                    What sets your website apart from other car dealerships?
+                                    Can I switch or leave my study group if it's not the right fit for me?
                                     </div>
                                     <button onClick={handleButtonClick}>{buttonText}</button>
                                 </div>
                                 <div className="collapse-content">
-                                    <p> We take pride in offering a diverse selection of cars, competitive pricing, and exceptional customer service. Our team is knowledgeable and ready to assist you in finding the right vehicle for your needs. We also provide detailed vehicle descriptions and photos to make your online shopping experience informative and convenient.</p>
+                                    <p> Clarify the process for changing study groups or leaving one if it's necessary.</p>
                                 </div>
                             </div>
                         </div>
