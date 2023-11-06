@@ -4,7 +4,10 @@ import { BiSolidBookAlt } from 'react-icons/bi';
 import { HiOutlineUserGroup } from 'react-icons/hi';
 import { FaUserFriends } from 'react-icons/fa';
 
-import {  useState } from "react";
+import { FaFacebookSquare, FaYoutube } from 'react-icons/fa';
+import { RiInstagramFill } from 'react-icons/ri';
+
+import { useState } from "react";
 
 
 const Home = () => {
@@ -14,27 +17,34 @@ const Home = () => {
         setButtonText(prevText => (prevText === "+" ? "-" : "+"));
     };
 
-   
+
     return (
         <div>
-       
-  <div className="flex w-3/4 mx-auto sm:flex-col md:flex-col lg:flex-row bg-blue-400 rounded-lg">
-    <div className="mt-6 p-4 ">
-      <h4 className="text-5xl text-[#2407ff] font-bold">eStudy</h4>
-      <h3 className="text-3xl text-[#d1ff47] font-bold mt-4"> Start Your
-        <br />
-        Journey With
-        <br />
-        Us
-      </h3>
-      <h3 className="text-3xl text-[#0707ff] font-bold mt-4">Online Study</h3>
-      <p className="text-xl text-gray-500 font-bold mt-4">Our platform is a collaborative learning hub designed to enhance your academic journey. Join study groups, share resources, and achieve academic excellence through collective efforts. Connect with peers, submit assignments, and track your progress seamlessly. Elevate your learning experience with us.</p>
-    </div>
-    <div className="">
-      <img src="https://i.ibb.co/ZBrSVt3/4893928.jpg" alt="" />
-    </div>
-  </div>
 
+            <div className="flex w-full mx-auto sm:flex-col md:flex-col lg:flex-row bg-blue-400 rounded-lg">
+                <div className="flex-1 p-4">
+                    <h2 className="text-3xl text-[#2407ff] font-bold">eStudy</h2>
+                    <h3 className="text-6xl text-[#d1ff47] font-bold mt-8"> Start Your
+                        <br />
+                        Journey With
+                        <br />
+                        Us
+                    </h3>
+                    <h3 className="text-4xl text-[#0707ff] font-bold mt-9">Online Study</h3>
+                    <p className="text-xl text-gray-500 font-bold mt-4">Our platform is a collaborative learning hub designed to enhance your academic journey. Join study groups, share resources, and achieve academic excellence through collective efforts. Connect with peers, submit assignments, and track your progress seamlessly. Elevate your learning experience with us.</p>
+
+
+                    <div className='flex gap-3 mt-8'>
+                        <FaFacebookSquare className='text-[#1d1ddd] text-6xl' />
+                        <RiInstagramFill className='text-[#d71ddd] text-6xl' />
+                        <FaYoutube className='text-[#dd1d1d] text-6xl' />
+                    </div>
+
+                </div>
+                <div className=" flex-1">
+                    <img className="w-full h-full" src="https://i.ibb.co/ZBrSVt3/4893928.jpg" alt="" />
+                </div>
+            </div>
 
 
 
@@ -57,9 +67,9 @@ const Home = () => {
                     </div>
                 </div>
             </div>
-      
 
-           <div className='mb-20 mt-[40px]'>
+
+            <div className='mb-20 mt-[40px]'>
                 <h1 className='text-5xl font-bold text-[#d8b865] text-center mb-5'>FAQ Section</h1>
                 <div className='flex lg:flex-row flex-col-reverse gap-10 w-11/12 lg:w-3/4 mx-auto'>
                     <div data-aos="fade-right" className='w-11/12 lg:w-3/4 mx-auto flex flex-col gap-5 mt-7'>
@@ -68,7 +78,7 @@ const Home = () => {
                                 <input type="checkbox" />
                                 <div className="collapse-title text-xl font-medium flex justify-between">
                                     <div>
-                                    How can I create or join a study group on this platform??
+                                        How can I create or join a study group on this platform??
                                     </div>
                                     <button onClick={handleButtonClick}>{buttonText}</button>
                                 </div>
@@ -82,7 +92,7 @@ const Home = () => {
                                 <input type="checkbox" />
                                 <div className="collapse-title text-xl font-medium flex justify-between">
                                     <div>
-                                    What is the benefit of joining a study group?
+                                        What is the benefit of joining a study group?
                                     </div>
                                     <button onClick={handleButtonClick}>{buttonText}</button>
                                 </div>
@@ -96,7 +106,7 @@ const Home = () => {
                                 <input type="checkbox" />
                                 <div className="collapse-title text-xl font-medium flex justify-between">
                                     <div>
-                                    What happens if I have a disagreement or issue within my study group?
+                                        What happens if I have a disagreement or issue within my study group?
                                     </div>
                                     <button onClick={handleButtonClick}>{buttonText}</button>
                                 </div>
@@ -110,7 +120,7 @@ const Home = () => {
                                 <input type="checkbox" />
                                 <div className="collapse-title text-xl font-medium flex justify-between">
                                     <div>
-                                    How can I schedule a test drive or inquire about a specific vehicle?
+                                        How can I schedule a test drive or inquire about a specific vehicle?
                                     </div>
                                     <button onClick={handleButtonClick}>{buttonText}</button>
                                 </div>
@@ -124,7 +134,7 @@ const Home = () => {
                                 <input type="checkbox" />
                                 <div className="collapse-title text-xl font-medium flex justify-between">
                                     <div>
-                                    Can I switch or leave my study group if it's not the right fit for me?
+                                        Can I switch or leave my study group if it's not the right fit for me?
                                     </div>
                                     <button onClick={handleButtonClick}>{buttonText}</button>
                                 </div>
@@ -134,9 +144,7 @@ const Home = () => {
                             </div>
                         </div>
                     </div>
-                    <div data-aos="fade-left" className=''>
-                        <img src="/faq.svg" alt="" />
-                    </div>
+                 
                 </div>
             </div>
         </div>

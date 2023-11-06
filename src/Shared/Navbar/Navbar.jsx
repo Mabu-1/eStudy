@@ -42,6 +42,23 @@ const Navbar = () => {
           Home
         </NavLink>
       </li>
+    
+      <li>
+        <NavLink
+          to="/assignments"
+
+        >
+          Assignments
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          to="/create"
+
+        >
+          Create Assignments
+        </NavLink>
+      </li>
    
       
     
