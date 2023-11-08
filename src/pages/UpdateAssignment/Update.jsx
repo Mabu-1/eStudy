@@ -76,7 +76,7 @@ const Update = () => {
         };
 
         console.log(myData);
-        fetch(`https://estudy-server-22qc7a73a-mabus-projects.vercel.app/assignment/${assignmentToDisplay._id}`, {
+        fetch(`https://estudy-server.vercel.app/assignment/${assignmentToDisplay._id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

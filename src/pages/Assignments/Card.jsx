@@ -23,7 +23,7 @@ const Card = ({ assignment, refetch }) => {
       });
     } else {
       axios
-        .delete(`https://estudy-server-22qc7a73a-mabus-projects.vercel.app/assignment/${_id}`)
+        .delete(`https://estudy-server.vercel.app/assignment/${_id}`)
         .then((res) => {
           if (res.data.deletedCount > 0) {
             // Display a success message using SweetAlert
@@ -66,7 +66,7 @@ const Card = ({ assignment, refetch }) => {
 
       <div className="flex justify-between">
         <div className="flex-1">
-          <h2 className="text-5xl font-bold mt-4">{title}</h2>
+          <h2 className="text-4xl font-bold mt-4">{title}</h2>
           <p className="text-2xl text-gray-600 mt-4 font-bold">Marks: {marks}</p>
           <p className="text-2xl text-gray-600 mt-4 font-bold">Difficulty: {difficulty}</p>
         </div>

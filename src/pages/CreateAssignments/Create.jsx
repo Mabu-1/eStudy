@@ -50,7 +50,7 @@ const Create = () => {
         console.log(myData);
 
         try {
-            const res = await axios.post("https://estudy-server-22qc7a73a-mabus-projects.vercel.app/assignment", myData);
+            const res = await axios.post("https://estudy-server.vercel.app/assignment", myData);
             console.log(res)
             if (res.data.acknowledged) {
                 Swal.fire({

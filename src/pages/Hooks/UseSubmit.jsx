@@ -5,7 +5,7 @@ const UseSubmit = () => {
         {
             queryKey: ["submit"],
             queryFn: async () => {
-                const data = await fetch("https://estudy-server-22qc7a73a-mabus-projects.vercel.app/submit");
+                const data = await fetch("https://estudy-server.vercel.app/submit");
                 return await data.json();
             }
         }
