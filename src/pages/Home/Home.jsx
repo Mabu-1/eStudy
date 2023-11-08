@@ -51,17 +51,17 @@ const Home = () => {
             <div className='w-3/4 mx-auto text-center py-20'>
                 <div className='flex lg:flex-row flex-col lg:text-center lg:gap-5 gap-8'>
                     <div data-aos="fade-right" className='mx-auto flex flex-col justify-center items-center'>
-                        <BiSolidBookAlt className='text-6xl text-[#FFB807]' />
+                        <BiSolidBookAlt className='text-6xl text-[#0730ff]' />
                         <h3 className='text-4xl pb-3 font-semibold'>StudyHub Showcase</h3>
                         <p className='text-slate-600'>Highlighting top study groups, assignments, and study partners in one central hub.</p>
                     </div>
                     <div data-aos="fade-down" className='mx-auto flex flex-col justify-center items-center'>
-                        <FaUserFriends className='text-6xl text-[#FFB807]' />
+                        <FaUserFriends className='text-6xl text-[#0730ff]' />
                         <h3 className='text-4xl pb-3 font-semibold'>GroupSuccess Awards</h3>
                         <p className='text-slate-600'>Recognizing outstanding study groups and individuals with achievement awards.</p>
                     </div>
                     <div data-aos="fade-left" className='mx-auto flex flex-col justify-center items-center'>
-                        <HiOutlineUserGroup className='text-6xl text-[#FFB807]' />
+                        <HiOutlineUserGroup className='text-6xl text-[#0730ff]' />
                         <h3 className='text-4xl pb-3 font-semibold'>Collaboration Corner</h3>
                         <p className='text-slate-600'>Showcasing remarkable study groups and facilitating collaborative learning.</p>
                     </div>
