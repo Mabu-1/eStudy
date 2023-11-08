@@ -5,7 +5,7 @@ const UseAssignment = () => {
         {
             queryKey: ["assignment"],
             queryFn: async () => {
-                const data = await fetch("https://estudy-server-jivnn7zjq-mabus-projects.vercel.app/assignment");
+                const data = await fetch("https://estudy-server-22qc7a73a-mabus-projects.vercel.app/assignment");
                 return await data.json();
             }
         }

@@ -52,7 +52,7 @@ const Take = () => {
 
 
     try {
-      const res = await axios.post("https://estudy-server-jivnn7zjq-mabus-projects.vercel.app/submit", myData);
+      const res = await axios.post("https://estudy-server-22qc7a73a-mabus-projects.vercel.app/submit", myData);
       console.log(res)
       if (res.data.acknowledged) {
         Swal.fire({

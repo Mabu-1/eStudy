@@ -39,7 +39,7 @@ const Mark = () => {
     };
     console.log(myData)
 
-    fetch(`https://estudy-server-jivnn7zjq-mabus-projects.vercel.app/submit/${assignmentToDisplay._id}`, {
+    fetch(`https://estudy-server-22qc7a73a-mabus-projects.vercel.app/submit/${assignmentToDisplay._id}`, {
       method: 'PUT',
       headers: {
         'content-type': 'application/json'
