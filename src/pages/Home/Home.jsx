@@ -21,10 +21,10 @@ const Home = () => {
     return (
         <div>
 
-            <div className="flex w-full mx-auto sm:flex-col md:flex-col lg:flex-row bg-blue-400 rounded-lg">
+            <div className="flex w-full mx-auto sm:flex-col md:flex-col lg:flex-row bg-blue-200 rounded-lg">
                 <div className="flex-1 p-4">
                     <h2 className="text-3xl text-[#2407ff] font-bold">eStudy</h2>
-                    <h3 className="text-6xl text-[#d1ff47] font-bold mt-8"> Start Your
+                    <h3 className="text-6xl text-[#4769ff] font-bold mt-8"> Start Your
                         <br />
                         Journey With
                         <br />
@@ -144,7 +144,7 @@ const Home = () => {
                             </div>
                         </div>
                     </div>
-                 
+
                 </div>
             </div>
         </div>
