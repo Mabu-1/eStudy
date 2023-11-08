@@ -23,28 +23,28 @@ const Update = () => {
         dueDate: null,
     });
 
-    const formRef = useRef(null); 
+    const formRef = useRef(null);
     const { user } = useContext(AuthContext);
-    const email=user.email;
+    const email = user.email;
     const { isFetching, isLoading, data } = UseAssignment();
     if (isLoading) {
         return <Loading />;
-      }
-     
-    const assignmentToDisplay = data.find((assignment) => assignment.email=== email);
+    }
+
+    const assignmentToDisplay = data.find((assignment) => assignment.email === email);
     if (!assignmentToDisplay) {
         return (
             <div className="w-4/5 mx-auto mt-8 mb-10 p-4 bg-red-200 text-red-800 rounded-md flex justify-between">
                 <img className="w-2/4" src="https://i.ibb.co/pZvLYzn/6732842.jpg" alt="" />
                 <div className="flex justify-center items-center p-2">
-                <h1 className="text-4xl">You do not have permission to update it.</h1> 
+                    <h1 className="text-4xl">You do not have permission to update it.</h1>
                 </div>
-               
+
             </div>
         );
     }
-  
-  
+
+
 
     const handleInputChange = async (e) => {
         e.preventDefault(); // Prevent the default form submission behavior
@@ -76,7 +76,7 @@ const Update = () => {
         };
 
         console.log(myData);
-        fetch(`http://localhost:5001/assignment/${assignmentToDisplay._id}`, {
+        fetch(`https://estudy-server-5m5m2eu30-mabus-projects.vercel.app/assignment/${assignmentToDisplay._id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -92,7 +92,7 @@ const Update = () => {
                         text: 'Assignment Updated Successfully',
                         icon: 'success',
                         confirmButtonText: 'Ok'
-                        
+
                     });
                     navigate(location?.state ? location.state : '/assignments');
                     // Reset the form
@@ -120,7 +120,7 @@ const Update = () => {
                     <input
                         type="text"
                         name="title"
-                       
+
                         defaultValue={assignmentToDisplay.title}
                         onChange={handleInputChange}
                         className="border rounded-md p-2 w-full"
@@ -131,7 +131,7 @@ const Update = () => {
                     <label>Description:</label>
                     <textarea
                         name="description"
-                       
+
                         defaultValue={assignmentToDisplay.description}
                         onChange={handleInputChange}
                         className="border rounded-md p-2 w-full h-24"
@@ -143,7 +143,7 @@ const Update = () => {
                     <input
                         type="number"
                         name="marks"
-                     
+
                         defaultValue={assignmentToDisplay.marks}
                         onChange={handleInputChange}
                         className="border rounded-md p-2 w-full"
@@ -155,7 +155,7 @@ const Update = () => {
                     <input
                         type="text"
                         name="thumbnail"
-                       
+
                         defaultValue={assignmentToDisplay.thumbnail}
                         onChange={handleInputChange}
                         className="border rounded-md p-2 w-full"
@@ -166,7 +166,7 @@ const Update = () => {
                     <label>Difficulty Level:</label>
                     <select
                         name="difficulty"
-                       
+
                         defaultValue={assignment.difficulty}
                         onChange={handleInputChange}
                         className="border rounded-md p-2 w-full"

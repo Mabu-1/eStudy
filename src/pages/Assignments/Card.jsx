@@ -23,7 +23,7 @@ const Card = ({ assignment, refetch }) => {
       });
     } else {
       axios
-        .delete(`http://localhost:5001/assignment/${_id}`)
+        .delete(`https://estudy-server-5m5m2eu30-mabus-projects.vercel.app/assignment/${_id}`)
         .then((res) => {
           if (res.data.deletedCount > 0) {
             // Display a success message using SweetAlert
@@ -48,7 +48,7 @@ const Card = ({ assignment, refetch }) => {
   };
 
   const handleUpdateClick = () => {
-   
+
     if (email !== user.email) {
       Swal.fire({
         icon: 'error',

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import UseSubmit from '../Hooks/UseSubmit';
 import Loading from '../Loading/Loading';
-import {  useParams, useLocation, useNavigate } from 'react-router-dom';
+import { useParams, useLocation, useNavigate } from 'react-router-dom';
 import { AiOutlineFilePdf } from 'react-icons/ai';
 import Swal from 'sweetalert2';
 
@@ -37,31 +37,31 @@ const Mark = () => {
       feedback: form.feedback.value || "not Given",
       status,
     };
-console.log(myData)
+    console.log(myData)
 
-fetch(`http://localhost:5001/submit/${assignmentToDisplay._id}`, {
-    method: 'PUT',
-    headers: {
+    fetch(`https://estudy-server-5m5m2eu30-mabus-projects.vercel.app/submit/${assignmentToDisplay._id}`, {
+      method: 'PUT',
+      headers: {
         'content-type': 'application/json'
-    },
-    body: JSON.stringify(myData)
-})
-    .then(res => res.json())
-    .then(data => {
+      },
+      body: JSON.stringify(myData)
+    })
+      .then(res => res.json())
+      .then(data => {
         console.log(data);
         if (data.modifiedCount > 0) {
-            Swal.fire({
-                title: 'Success!',
-                text: 'Mark Updated Successfully',
-                icon: 'success',
-                confirmButtonText: 'Ok'
-                
-            });
-            navigate(location?.state ? location.state : '/submissions');
-            // Reset the form
-          
+          Swal.fire({
+            title: 'Success!',
+            text: 'Mark Updated Successfully',
+            icon: 'success',
+            confirmButtonText: 'Ok'
+
+          });
+          navigate(location?.state ? location.state : '/submissions');
+          // Reset the form
+
         }
-    });
+      });
     // Add your logic to submit the data here, e.g., using an API request
 
     // Clear the feedback and marks input fields

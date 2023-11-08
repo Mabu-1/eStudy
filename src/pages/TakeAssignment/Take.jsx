@@ -11,15 +11,15 @@ const Take = () => {
   const [quickNote, setQuickNote] = useState('');
   const { id } = useParams();
   const { user } = useContext(AuthContext);
-  const email=user.email;
-  const name =user.displayName;
-  const { isFetching, isLoading, data,refetch } = UseAssignment();
- 
+  const email = user.email;
+  const name = user.displayName;
+  const { isFetching, isLoading, data, refetch } = UseAssignment();
+
   const assignmentToDisplay = data.find((assignment) => assignment._id === id);
-   console.log(assignmentToDisplay.title)
-   const title =assignmentToDisplay.title;
-   const marks =assignmentToDisplay.marks;
-   const feedback="";
+  console.log(assignmentToDisplay.title)
+  const title = assignmentToDisplay.title;
+  const marks = assignmentToDisplay.marks;
+  const feedback = "";
   if (isLoading) {
     return <Loading />;
   }
@@ -31,43 +31,43 @@ const Take = () => {
     setQuickNote(e.target.value);
   };
 
-  const handleSubmit =async (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const form = e.target;
     const myData = {
-        pdfLink: form.pdfLink?.value || "not Given",
-        quickNote: form.quickNote?.value || "not Given",
-        email, 
-        status: "Pending", 
-        title,
-        marks,
-        name,
-       feedback
-      
-       
-       
-       
+      pdfLink: form.pdfLink?.value || "not Given",
+      quickNote: form.quickNote?.value || "not Given",
+      email,
+      status: "Pending",
+      title,
+      marks,
+      name,
+      feedback
+
+
+
+
 
     }
 
-    
+
     try {
-        const res = await axios.post("http://localhost:5001/submit", myData);
-        console.log(res)
-        if (res.data.acknowledged) {
-            Swal.fire({
-                position: 'top-end', // You can use any valid position value
-                icon: 'success',
-                title: 'Assignment Submitted Successfully',
-                showConfirmButton: false,
-                timer: 1500
-            });
-           
-        }
+      const res = await axios.post("https://estudy-server-5m5m2eu30-mabus-projects.vercel.app/submit", myData);
+      console.log(res)
+      if (res.data.acknowledged) {
+        Swal.fire({
+          position: 'top-end', // You can use any valid position value
+          icon: 'success',
+          title: 'Assignment Submitted Successfully',
+          showConfirmButton: false,
+          timer: 1500
+        });
+
+      }
     } catch (error) {
-        console.log(error);
+      console.log(error);
     }
-      console.log(myData)
+    console.log(myData)
     setPdfLink('');
     setQuickNote('');
 
