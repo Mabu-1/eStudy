@@ -23,7 +23,7 @@ const Card = ({ assignment, refetch }) => {
       });
     } else {
       axios
-        .delete(`https://estudy-server-5m5m2eu30-mabus-projects.vercel.app/assignment/${_id}`)
+        .delete(`https://estudy-server-jivnn7zjq-mabus-projects.vercel.app/assignment/${_id}`)
         .then((res) => {
           if (res.data.deletedCount > 0) {
             // Display a success message using SweetAlert
