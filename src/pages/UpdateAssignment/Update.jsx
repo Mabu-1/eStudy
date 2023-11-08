@@ -1,14 +1,19 @@
-import { useContext, useState } from "react";
+import { useContext, useRef, useState, } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { AuthContext } from "../../providers/AuthProvider";
-import axios from "axios";
-import Swal from "sweetalert2";
 
-const Create = () => {
-    const { user } = useContext(AuthContext);
-    const email=user.email;
-    
+import Swal from "sweetalert2";
+import UseAssignment from "../Hooks/UseAssignment";
+
+import Loading from "../Loading/Loading";
+import { useLocation, useNavigate } from "react-router-dom";
+
+
+
+const Update = () => {
+    const location = useLocation();
+    const navigate = useNavigate();
     const [assignment, setAssignment] = useState({
         title: "",
         description: "",
@@ -17,6 +22,29 @@ const Create = () => {
         difficulty: "easy",
         dueDate: null,
     });
+
+    const formRef = useRef(null); 
+    const { user } = useContext(AuthContext);
+    const email=user.email;
+    const { isFetching, isLoading, data } = UseAssignment();
+    if (isLoading) {
+        return <Loading />;
+      }
+     
+    const assignmentToDisplay = data.find((assignment) => assignment.email=== email);
+    if (!assignmentToDisplay) {
+        return (
+            <div className="w-4/5 mx-auto mt-8 mb-10 p-4 bg-red-200 text-red-800 rounded-md flex justify-between">
+                <img className="w-2/4" src="https://i.ibb.co/pZvLYzn/6732842.jpg" alt="" />
+                <div className="flex justify-center items-center p-2">
+                <h1 className="text-4xl">You do not have permission to update it.</h1> 
+                </div>
+               
+            </div>
+        );
+    }
+  
+  
 
     const handleInputChange = async (e) => {
         e.preventDefault(); // Prevent the default form submission behavior
@@ -48,24 +76,29 @@ const Create = () => {
         };
 
         console.log(myData);
-  
-        try {
-            const res = await axios.post("http://localhost:5001/assignment", myData);
-            console.log(res)
-            if (res.data.acknowledged) {
-                Swal.fire({
-                    position: 'top-end', // You can use any valid position value
-                    icon: 'success',
-                    title: 'Assignment created Successfully',
-                    showConfirmButton: false,
-                    timer: 1500
-                });
-               
-            }
-        } catch (error) {
-            console.log(error);
-        }
-        
+        fetch(`http://localhost:5001/assignment/${assignmentToDisplay._id}`, {
+            method: 'PUT',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(myData)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if (data.modifiedCount > 0) {
+                    Swal.fire({
+                        title: 'Success!',
+                        text: 'Assignment Updated Successfully',
+                        icon: 'success',
+                        confirmButtonText: 'Ok'
+                        
+                    });
+                    navigate(location?.state ? location.state : '/assignments');
+                    // Reset the form
+                    formRef.current.reset();
+                }
+            });
         // Show success message using a toast or modal.
 
         // Clear the form or reset the assignment state if needed.
@@ -81,13 +114,14 @@ const Create = () => {
 
     return (
         <div className="w-4/5 mx-auto mt-8 mb-10">
-            <form onSubmit={handleCreateAssignment} className="space-y-4">
+            <form ref={formRef} onSubmit={handleCreateAssignment} className="space-y-4">
                 <div>
                     <label>Title:</label>
                     <input
                         type="text"
                         name="title"
-                        value={assignment.title}
+                       
+                        defaultValue={assignmentToDisplay.title}
                         onChange={handleInputChange}
                         className="border rounded-md p-2 w-full"
                         required // Add required attribute
@@ -97,7 +131,8 @@ const Create = () => {
                     <label>Description:</label>
                     <textarea
                         name="description"
-                        value={assignment.description}
+                       
+                        defaultValue={assignmentToDisplay.description}
                         onChange={handleInputChange}
                         className="border rounded-md p-2 w-full h-24"
                         required // Add required attribute
@@ -108,7 +143,8 @@ const Create = () => {
                     <input
                         type="number"
                         name="marks"
-                        value={assignment.marks}
+                     
+                        defaultValue={assignmentToDisplay.marks}
                         onChange={handleInputChange}
                         className="border rounded-md p-2 w-full"
                         required // Add required attribute
@@ -119,7 +155,8 @@ const Create = () => {
                     <input
                         type="text"
                         name="thumbnail"
-                        value={assignment.thumbnail}
+                       
+                        defaultValue={assignmentToDisplay.thumbnail}
                         onChange={handleInputChange}
                         className="border rounded-md p-2 w-full"
                         required // Add required attribute
@@ -129,7 +166,8 @@ const Create = () => {
                     <label>Difficulty Level:</label>
                     <select
                         name="difficulty"
-                        value={assignment.difficulty}
+                       
+                        defaultValue={assignment.difficulty}
                         onChange={handleInputChange}
                         className="border rounded-md p-2 w-full"
                         required // Add required attribute
@@ -143,6 +181,7 @@ const Create = () => {
                     <label>Due Date:</label>
                     <DatePicker
                         selected={assignment.dueDate}
+                        defaultValue={assignmentToDisplay.dueDate}
                         onChange={handleDueDateChange}
                         dateFormat="yyyy-MM-dd"
                         className="border rounded-md p-2 w-full"
@@ -154,7 +193,7 @@ const Create = () => {
                         type="submit"
                         className="flex justify-center bg-blue-500 text-white text-xl font-bold py-2 px-4 rounded-md hover-orange-500 transition duration-300 ease-in-out"
                     >
-                        Create Assignment
+                        Update Assignment
                     </button>
                 </div>
             </form>
@@ -162,4 +201,4 @@ const Create = () => {
     );
 };
 
-export default Create;
+export default Update;

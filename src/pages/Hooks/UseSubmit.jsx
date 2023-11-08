@@ -1,12 +1,12 @@
 import { useQuery } from "@tanstack/react-query";
-const UseAssignment = () => {
+const UseSubmit = () => {
     
         const  {data,isLoading,isFetching,refetch} = useQuery(
             {
-                queryKey:["assignment"],
+                queryKey:["submit"],
                 queryFn: async () =>
                 {
-                    const data= await fetch ("http://localhost:5001/assignment");
+                    const data= await fetch ("http://localhost:5001/submit");
                     return await data.json();
                 }
             }
@@ -16,4 +16,4 @@ const UseAssignment = () => {
     return { data,isLoading,isFetching,refetch};
 };
 
-export default UseAssignment;
+export default UseSubmit;

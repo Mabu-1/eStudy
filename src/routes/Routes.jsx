@@ -6,6 +6,12 @@ import Register from "../pages/Register/Register";
 import PrivateRoute from "./PrivateRoute";
 import Create from "../pages/CreateAssignments/Create";
 import Assignments from "../pages/Assignments/Assignments";
+import View from "../pages/ViewAssignments/View";
+import Update from "../pages/UpdateAssignment/Update";
+import Take from "../pages/TakeAssignment/Take";
+import Submit from "../pages/SubmitAssignment/Submit";
+import MyAssignments from "../pages/MyAssignments/MyAssignments";
+import Mark from "../pages/MarkAssignment/Mark";
 
 
 
@@ -29,7 +35,49 @@ const router =createBrowserRouter([
            {
             path:'/assignments',
             element:<Assignments></Assignments>,
-            loader: () => fetch('http://localhost:5000/assignment')
+          
+           
+          
+           },
+           {
+            path:'/view/:id',
+            element:<PrivateRoute><View></View></PrivateRoute> ,
+           
+           
+          
+           },
+           {
+            path:'/update/:id',
+            element:<PrivateRoute><Update></Update></PrivateRoute> ,
+           
+           
+          
+           },
+           {
+            path:'/take/:id',
+            element:<PrivateRoute><Take></Take></PrivateRoute> ,
+           
+           
+          
+           },
+           {
+            path:'/submissions',
+            element:<PrivateRoute><Submit></Submit></PrivateRoute> ,
+           
+           
+          
+           },
+           {
+            path:'/myassignments',
+            element:<PrivateRoute><MyAssignments></MyAssignments></PrivateRoute> ,
+           
+           
+          
+           },
+           {
+            path:'/mark/:id',
+            element:<PrivateRoute><Mark></Mark></PrivateRoute> ,
+           
            
           
            },

@@ -59,6 +59,23 @@ const Navbar = () => {
           Create Assignments
         </NavLink>
       </li>
+      <li>
+        <NavLink
+          to="/submissions"
+
+        >
+          Submissions
+        </NavLink>
+      </li>
+   
+      <li>
+        <NavLink
+          to="/myassignments"
+
+        >
+          My Assignments
+        </NavLink>
+      </li>
    
       
     
