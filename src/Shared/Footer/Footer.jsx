@@ -27,6 +27,10 @@ const Footer = () => {
                         </div>
                         <div>
                             <h2 className='text-4xl mt-5 mb-8 font-semibold text-[#2cae74]'>Pages</h2>
+                           <li><Link className="text-blue-300 text-lg font-bold" to='/assignments'>Assignments</Link></li>
+                           <li><Link className="text-blue-300 text-lg font-bold" to='/create'>Create Assignments</Link></li>
+                           <li><Link className="text-blue-300 text-lg font-bold" to='/submissions'>Submissions</Link></li>
+                           <li><Link className="text-blue-300 text-lg font-bold" to='/myassignment'>My Assignments</Link></li>
                            <li><Link className="text-blue-300 text-lg font-bold" to='/login'>login</Link></li>
                            <li><Link className="text-blue-300 text-lg font-bold" to='/register'>Register</Link></li>
                         </div>
