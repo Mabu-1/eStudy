@@ -34,16 +34,16 @@ const Navbar = () => {
   }
   const navLinks = (
     <>
-      <li>
+      <li className="px-2">
         <NavLink
           to="/"
 
         >
           Home
         </NavLink>
-      </li>
+      </li >
     
-      <li>
+      <li className="px-2">
         <NavLink
           to="/assignments"
 
@@ -51,7 +51,7 @@ const Navbar = () => {
           Assignments
         </NavLink>
       </li>
-      <li>
+      <li className="px-2">
         <NavLink
           to="/create"
 
@@ -59,7 +59,7 @@ const Navbar = () => {
           Create Assignments
         </NavLink>
       </li>
-      <li>
+      <li className="px-2">
         <NavLink
           to="/submissions"
 
@@ -68,7 +68,7 @@ const Navbar = () => {
         </NavLink>
       </li>
    
-      <li>
+      <li className="px-2">
         <NavLink
           to="/myassignments"
 
