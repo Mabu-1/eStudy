@@ -70,7 +70,7 @@ const Home = () => {
 
 
             <div className='mb-20 mt-[40px]'>
-                <h1 className='text-5xl font-bold text-[#d8b865] text-center mb-5'>FAQ Section</h1>
+                <h1 className='text-5xl font-bold text-[#0730ff] text-center mb-5'>FAQ Section</h1>
                 <div className='flex lg:flex-row flex-col-reverse gap-10 w-11/12 lg:w-3/4 mx-auto'>
                     <div data-aos="fade-right" className='w-11/12 lg:w-3/4 mx-auto flex flex-col gap-5 mt-7'>
                         <div className='w-full mx-auto border-2 border-slate-200'>
