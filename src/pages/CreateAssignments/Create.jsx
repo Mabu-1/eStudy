@@ -7,8 +7,8 @@ import Swal from "sweetalert2";
 
 const Create = () => {
     const { user } = useContext(AuthContext);
-    const email=user.email;
-    
+    const email = user.email;
+
     const [assignment, setAssignment] = useState({
         title: "",
         description: "",
@@ -48,7 +48,7 @@ const Create = () => {
         };
 
         console.log(myData);
-  
+
         try {
             const res = await axios.post("http://localhost:5001/assignment", myData);
             console.log(res)
@@ -60,12 +60,12 @@ const Create = () => {
                     showConfirmButton: false,
                     timer: 1500
                 });
-               
+
             }
         } catch (error) {
             console.log(error);
         }
-        
+
         // Show success message using a toast or modal.
 
         // Clear the form or reset the assignment state if needed.
@@ -83,7 +83,7 @@ const Create = () => {
         <div className="w-4/5 mx-auto mt-8 mb-10">
             <form onSubmit={handleCreateAssignment} className="space-y-4">
                 <div>
-                    <label>Title:</label>
+                    <label className="text-xl font-bold">Title:</label>
                     <input
                         type="text"
                         name="title"
@@ -94,7 +94,7 @@ const Create = () => {
                     />
                 </div>
                 <div>
-                    <label>Description:</label>
+                    <label className="text-xl font-bold">Description:</label>
                     <textarea
                         name="description"
                         value={assignment.description}
@@ -104,7 +104,7 @@ const Create = () => {
                     />
                 </div>
                 <div>
-                    <label>Marks:</label>
+                    <label className="text-xl font-bold">Marks:</label>
                     <input
                         type="number"
                         name="marks"
@@ -115,7 +115,7 @@ const Create = () => {
                     />
                 </div>
                 <div>
-                    <label>Thumbnail Image URL:</label>
+                    <label className="text-xl font-bold">Thumbnail Image URL:</label>
                     <input
                         type="text"
                         name="thumbnail"
@@ -126,7 +126,7 @@ const Create = () => {
                     />
                 </div>
                 <div>
-                    <label>Difficulty Level:</label>
+                    <label className="text-xl font-bold">Difficulty Level:</label>
                     <select
                         name="difficulty"
                         value={assignment.difficulty}
@@ -140,7 +140,7 @@ const Create = () => {
                     </select>
                 </div>
                 <div>
-                    <label>Due Date:</label>
+                    <label className="text-xl font-bold">Due Date:</label>
                     <DatePicker
                         selected={assignment.dueDate}
                         onChange={handleDueDateChange}
