@@ -8,7 +8,7 @@ const Loading = () => {
             <HashLoader
 
                 size={150}
-                color={"#36D7B7"} 
+                color={"#36D7B7"}
                 loading={true}
             />
         </div>

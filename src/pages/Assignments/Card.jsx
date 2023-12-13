@@ -7,6 +7,18 @@ import Swal from 'sweetalert2';
 import { useContext } from 'react';
 import { AuthContext } from '../../providers/AuthProvider';
 import { useNavigate } from 'react-router-dom';
+import { motion } from 'framer-motion';
+
+const buttonVariants = {
+  hover: {
+    scale: 1.1,
+    transition: { duration: 0.3 },
+  },
+  tap: {
+    scale: 0.9,
+    transition: { duration: 0.3 },
+  },
+};
 
 const Card = ({ assignment, refetch }) => {
   const { _id, thumbnail, title, marks, difficulty, email } = assignment;
@@ -75,32 +87,40 @@ const Card = ({ assignment, refetch }) => {
           <div className="py-2">
             <Link to={`/view/${_id}`}>
               <div className="flex justify-end">
-                <button className="bg-blue-500 text-white py-1 px-1 w-1/6 rounded mt-2 flex justify-center">
+                <motion.button
+                  variants={buttonVariants}
+                  whileHover="hover"
+                  className="bg-blue-500 text-white py-1 px-1 w-1/6 rounded mt-2 flex justify-center"
+                >
                   <AiFillEye className="text-4xl"></AiFillEye>
-                </button>
+                </motion.button>
               </div>
             </Link>
           </div>
 
           <div>
             <div className="flex justify-end">
-              <button
+              <motion.button
+                variants={buttonVariants}
+                whileHover="hover"
                 onClick={handleUpdateClick}
                 className="bg-green-500 text-white py-1 px-2 w-1/6 rounded mt-2 flex justify-center"
               >
                 <GrUpdate className="text-4xl"></GrUpdate>
-              </button>
+              </motion.button>
             </div>
           </div>
 
           <div>
             <div className="flex justify-end">
-              <button
+              <motion.button
+                variants={buttonVariants}
+                whileHover="hover"
                 onClick={handleDelete}
                 className="bg-red-500 text-white py-1 px-2 w-1/6 rounded mt-2 flex justify-center"
               >
                 <AiFillDelete className="text-4xl"></AiFillDelete>
-              </button>
+              </motion.button>
             </div>
           </div>
         </div>
@@ -108,5 +128,6 @@ const Card = ({ assignment, refetch }) => {
     </div>
   );
 };
+
 
 export default Card;

@@ -1,22 +1,34 @@
-import { useContext, useState } from "react";
+import React, { useContext, useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { AuthContext } from "../../providers/AuthProvider";
 import axios from "axios";
 import Swal from "sweetalert2";
+import { motion } from "framer-motion";
+
+const buttonVariants = {
+  hover: {
+    scale: 1.1,
+    transition: { duration: 0.3 },
+  },
+  tap: {
+    scale: 0.9,
+    transition: { duration: 0.3 },
+  },
+};
 
 const Create = () => {
-    const { user } = useContext(AuthContext);
-    const email = user.email;
+  const { user } = useContext(AuthContext);
+  const email = user.email;
 
-    const [assignment, setAssignment] = useState({
-        title: "",
-        description: "",
-        marks: "",
-        thumbnail: "",
-        difficulty: "easy",
-        dueDate: null,
-    });
+  const [assignment, setAssignment] = useState({
+    title: "",
+    description: "",
+    marks: "",
+    thumbnail: "",
+    difficulty: "easy",
+    dueDate: null,
+  });
 
     const handleInputChange = async (e) => {
         e.preventDefault(); // Prevent the default form submission behavior
@@ -150,16 +162,19 @@ const Create = () => {
                     />
                 </div>
                 <div className="flex justify-center">
-                    <button
-                        type="submit"
-                        className="flex justify-center bg-blue-500 text-white text-xl font-bold py-2 px-4 rounded-md hover-orange-500 transition duration-300 ease-in-out"
-                    >
-                        Create Assignment
-                    </button>
-                </div>
-            </form>
+          <motion.button
+            type="submit"
+            variants={buttonVariants}
+            whileHover="hover" // Add this line
+            whileTap="tap" // Add this line
+            className="flex justify-center bg-blue-500 text-white text-xl font-bold py-2 px-4 rounded-md hover-orange-500 transition duration-300 ease-in-out"
+          >
+            Create Assignment
+          </motion.button>
         </div>
-    );
+      </form>
+    </div>
+  );
 };
 
 export default Create;

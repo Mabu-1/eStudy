@@ -5,6 +5,18 @@ import Swal from 'sweetalert2';
 import Loading from '../Loading/Loading';
 import UseAssignment from '../Hooks/UseAssignment';
 import { useParams } from 'react-router-dom';
+import { motion } from 'framer-motion';
+
+const buttonVariants = {
+  hover: {
+    scale: 1.1,
+    transition: { duration: 0.3 },
+  },
+  tap: {
+    scale: 0.9,
+    transition: { duration: 0.3 },
+  },
+};
 
 const Take = () => {
   const [pdfLink, setPdfLink] = useState('');
@@ -16,13 +28,14 @@ const Take = () => {
   const { isFetching, isLoading, data, refetch } = UseAssignment();
 
   const assignmentToDisplay = data.find((assignment) => assignment._id === id);
-  console.log(assignmentToDisplay.title)
   const title = assignmentToDisplay.title;
   const marks = assignmentToDisplay.marks;
   const feedback = "";
+
   if (isLoading) {
     return <Loading />;
   }
+
   const handlePdfLinkChange = (e) => {
     setPdfLink(e.target.value);
   };
@@ -42,36 +55,27 @@ const Take = () => {
       title,
       marks,
       name,
-      feedback
-
-
-
-
-
-    }
-
+      feedback,
+    };
 
     try {
       const res = await axios.post("https://estudy-server.vercel.app/submit", myData);
-      console.log(res)
+      console.log(res);
       if (res.data.acknowledged) {
         Swal.fire({
-          position: 'top-end', // You can use any valid position value
+          position: 'top-end',
           icon: 'success',
           title: 'Assignment Submitted Successfully',
           showConfirmButton: false,
-          timer: 1500
+          timer: 1500,
         });
-
       }
     } catch (error) {
       console.log(error);
     }
-    console.log(myData)
+
     setPdfLink('');
     setQuickNote('');
-
-    // Add your submission logic here, e.g., sending data to the server.
   };
 
   return (
@@ -88,7 +92,7 @@ const Take = () => {
           <input
             type="text"
             id="pdfLink"
-            name="pdfLink" // Added name attribute
+            name="pdfLink"
             value={pdfLink}
             onChange={handlePdfLinkChange}
             className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring focus:ring-blue-300"
@@ -101,7 +105,7 @@ const Take = () => {
           </label>
           <textarea
             id="quickNote"
-            name="quickNote" // Added name attribute
+            name="quickNote"
             value={quickNote}
             onChange={handleQuickNoteChange}
             className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring focus:ring-blue-300"
@@ -110,12 +114,15 @@ const Take = () => {
           />
         </div>
         <div className="text-center">
-          <button
+          <motion.button
             type="submit"
+            variants={buttonVariants}
+            whileHover="hover"
+            whileTap="tap"
             className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600"
           >
             Submit
-          </button>
+          </motion.button>
         </div>
       </form>
     </div>

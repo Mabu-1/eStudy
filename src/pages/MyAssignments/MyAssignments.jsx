@@ -14,9 +14,9 @@ const MyAssignments = () => {
     return <Loading />;
   }
 
-//   if (!Array.isArray(data)) {
-//     return <div>No data available.</div>;
-//   }
+  //   if (!Array.isArray(data)) {
+  //     return <div>No data available.</div>;
+  //   }
 
   const assignmentToDisplay = data.filter((myassignments) => myassignments.email === email);
   console.log(assignmentToDisplay)

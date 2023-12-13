@@ -2,7 +2,7 @@
 import { Link, useParams } from 'react-router-dom';
 import UseAssignment from '../Hooks/UseAssignment';
 import Loading from '../Loading/Loading';
-import { AiOutlineArrowLeft,AiOutlineArrowRight} from 'react-icons/ai'
+import { AiOutlineArrowLeft, AiOutlineArrowRight } from 'react-icons/ai'
 const View = () => {
   const { isFetching, isLoading, data } = UseAssignment();
   const { id } = useParams();
@@ -45,32 +45,32 @@ const View = () => {
       </div>
       <div className='flex justify-between'>
 
-      <div className="mt-[-10px]">
-   <Link to="/assignments"><button id="" type="submit" className="bg-[#FF444A] text-white text-center text-xl font-bold ml-[20px] my-3 w-[190px] rounded-lg p-3 flex"> <AiOutlineArrowLeft className="mr-4 text-xl mt-[7px]"></AiOutlineArrowLeft> Go Back</button> </Link> 
-  </div>
-  <div className="mt-[-10px]">
-  <Link to={`/take/${assignmentToDisplay._id}`}>
-  <button className="bg-[#ff9844] text-black text-center text-xl font-bold my-3 w-[220px] rounded-lg p-3 flex"> Take Assignment <AiOutlineArrowRight className="ml-4 text-xl mt-[7px]"></AiOutlineArrowRight>  </button>
-</Link>
-  </div>
- 
+        <div className="mt-[-10px]">
+          <Link to="/assignments"><button id="" type="submit" className="bg-[#FF444A] text-white text-center text-xl font-bold ml-[20px] my-3 w-[190px] rounded-lg p-3 flex"> <AiOutlineArrowLeft className="mr-4 text-xl mt-[7px]"></AiOutlineArrowLeft> Go Back</button> </Link>
+        </div>
+        <div className="mt-[-10px]">
+          <Link to={`/take/${assignmentToDisplay._id}`}>
+            <button className="bg-[#ff9844] text-black text-center text-xl font-bold my-3 w-[220px] rounded-lg p-3 flex"> Take Assignment <AiOutlineArrowRight className="ml-4 text-xl mt-[7px]"></AiOutlineArrowRight>  </button>
+          </Link>
+        </div>
+
       </div>
       <div className='flex justify-center'>
-      <h1 className="text-5xl font-bold mt-2">{assignmentToDisplay.title}</h1>
+        <h1 className="text-5xl font-bold mt-2">{assignmentToDisplay.title}</h1>
       </div>
-    
+
       <p className="text-3xl  my-10"> <span className='text-3xl font-bold'>Description:</span> {assignmentToDisplay.description}</p>
-      
+
       <div className='flex justify-between my-10'>
-      <p className="text-3xl text-gray-600 font-bold"> <span className='text-3xl text-red-500 font-bold'>Marks:</span> {assignmentToDisplay.marks}</p>
-      <p className="text-3xl text-gray-600  font-bold"><span className='text-3xl text-blue-500 font-bold'>Difficulty:</span> {assignmentToDisplay.difficulty}</p>
-      <p className="text-3xl text-gray-600  font-bold"> <span className='text-3xl text-orange-500 font-bold'>Due Date:</span> {dueDate}</p>
+        <p className="text-3xl text-gray-600 font-bold"> <span className='text-3xl text-red-500 font-bold'>Marks:</span> {assignmentToDisplay.marks}</p>
+        <p className="text-3xl text-gray-600  font-bold"><span className='text-3xl text-blue-500 font-bold'>Difficulty:</span> {assignmentToDisplay.difficulty}</p>
+        <p className="text-3xl text-gray-600  font-bold"> <span className='text-3xl text-orange-500 font-bold'>Due Date:</span> {dueDate}</p>
       </div>
-     
+
       <div className='flex justify-center'>
-      <h3 className="text-5xl font-bold mt-4 mb-10">Instructions</h3>
+        <h3 className="text-5xl font-bold mt-4 mb-10">Instructions</h3>
       </div>
-      
+
 
       {instructions.map((instruction, index) => (
         <div key={index} >

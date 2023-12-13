@@ -9,7 +9,7 @@ const PrivateRoute = ({ children }) => {
     const location = useLocation();
     console.log(location.pathname);
 
-    if (loading ==true) {
+    if (loading == true) {
         return <Loading></Loading>
     }
 

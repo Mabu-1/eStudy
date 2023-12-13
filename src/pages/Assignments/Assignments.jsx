@@ -4,7 +4,7 @@ import UseAssignment from '../Hooks/UseAssignment';
 import Card from './Card';
 
 const Assignments = () => {
-  const { isFetching, isLoading, data,refetch } = UseAssignment();
+  const { isFetching, isLoading, data, refetch } = UseAssignment();
   const [selectedDifficulty, setSelectedDifficulty] = useState('All'); // Default value is 'All'
 
   const handleDifficultyChange = (e) => {

@@ -7,7 +7,19 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Lottie from "lottie-react";
 import loginAnimation from "../../assets/loginAnimation.json"
+import { motion } from 'framer-motion';
 
+const buttonVariants = {
+    hover: {
+      scale: 1.05,
+      transition: { duration: 0.3 },
+    },
+    tap: {
+      scale: 0.95,
+      transition: { duration: 0.3 },
+    },
+  };
+  
 
 const Login = () => {
     const [loginError, setLoginError] = useState('');
@@ -99,21 +111,35 @@ const Login = () => {
                         {loginError && <p className="text-red-700">{loginError}</p>}
                     </div>
                     <div className="form-control mt-6 mb-3">
-                        <button className="btn btn-primary">Login</button>
-                    </div>
-                    <p className="text-xl text-center font-bold"> Or</p>
-                </form>
-                <div className="flex justify-center">
-                    <button onClick={() => handleGoogleSignIn(googleLogin)} className="btn btn-secondary mt-3 md:w-3/4 lg:w-1/2 mx-auto">
-                        <FcGoogle className="text-4xl"></FcGoogle>
-                    </button>
-                </div>
+          <motion.button
+            className="btn btn-primary"
+            variants={buttonVariants}
+            whileHover="hover"
+            whileTap="tap"
+          >
+            Login
+          </motion.button>
+        </div>
+        <p className="text-xl text-center font-bold"> Or</p>
+      </form>
+
+      <div className="flex justify-center">
+        <motion.button
+          onClick={() => handleGoogleSignIn(googleLogin)}
+          className="btn btn-secondary mt-3 md:w-3/4 lg:w-1/2 mx-auto"
+          variants={buttonVariants}
+          whileHover="hover"
+          whileTap="tap"
+        >
+          <FcGoogle className="text-4xl"></FcGoogle>
+        </motion.button>
+      </div>
                 <p className="text-center mt-4">Do not have an account? Please <Link className="text-blue-600 font-bold" to='/register'>Register</Link></p>
             </div>
 
             {/* Right Column with Animation (Replace with your animation content) */}
             <div className="md:w-1/2 lg:w-1/2 hidden md:flex lottie flex-1  mx-20" >
-               <Lottie animationData={loginAnimation} loop={false}></Lottie>
+                <Lottie animationData={loginAnimation} loop={false}></Lottie>
             </div>
             <ToastContainer />
         </div>

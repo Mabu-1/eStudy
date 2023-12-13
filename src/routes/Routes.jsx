@@ -15,85 +15,85 @@ import Mark from "../pages/MarkAssignment/Mark";
 
 
 
-const router =createBrowserRouter([
+const router = createBrowserRouter([
     {
         path: '/',
-        element:<Root></Root>,
-      
+        element: <Root></Root>,
+
         children:
-        [
-           {
-            path:'/',
-            element:<Home></Home>,
-          
-           },
-           {
-            path:'/create',
-            element:<PrivateRoute><Create></Create></PrivateRoute>,
-          
-           },
-           {
-            path:'/assignments',
-            element:<Assignments></Assignments>,
-          
-           
-          
-           },
-           {
-            path:'/view/:id',
-            element:<PrivateRoute><View></View></PrivateRoute> ,
-           
-           
-          
-           },
-           {
-            path:'/update/:id',
-            element:<PrivateRoute><Update></Update></PrivateRoute> ,
-           
-           
-          
-           },
-           {
-            path:'/take/:id',
-            element:<PrivateRoute><Take></Take></PrivateRoute> ,
-           
-           
-          
-           },
-           {
-            path:'/submissions',
-            element:<PrivateRoute><Submit></Submit></PrivateRoute> ,
-           
-           
-          
-           },
-           {
-            path:'/myassignments',
-            element:<PrivateRoute><MyAssignments></MyAssignments></PrivateRoute> ,
-           
-           
-          
-           },
-           {
-            path:'/mark/:id',
-            element:<PrivateRoute><Mark></Mark></PrivateRoute> ,
-           
-           
-          
-           },
-           {
-            path:'/login',
-            element:<Login></Login>
-           },
-           {
-            path:'/register',
-            element:<Register></Register>
-           },
-         
-          
-        ]
+            [
+                {
+                    path: '/',
+                    element: <Home></Home>,
+
+                },
+                {
+                    path: '/create',
+                    element: <PrivateRoute><Create></Create></PrivateRoute>,
+
+                },
+                {
+                    path: '/assignments',
+                    element: <Assignments></Assignments>,
+
+
+
+                },
+                {
+                    path: '/view/:id',
+                    element: <PrivateRoute><View></View></PrivateRoute>,
+
+
+
+                },
+                {
+                    path: '/update/:id',
+                    element: <PrivateRoute><Update></Update></PrivateRoute>,
+
+
+
+                },
+                {
+                    path: '/take/:id',
+                    element: <PrivateRoute><Take></Take></PrivateRoute>,
+
+
+
+                },
+                {
+                    path: '/submissions',
+                    element: <PrivateRoute><Submit></Submit></PrivateRoute>,
+
+
+
+                },
+                {
+                    path: '/myassignments',
+                    element: <PrivateRoute><MyAssignments></MyAssignments></PrivateRoute>,
+
+
+
+                },
+                {
+                    path: '/mark/:id',
+                    element: <PrivateRoute><Mark></Mark></PrivateRoute>,
+
+
+
+                },
+                {
+                    path: '/login',
+                    element: <Login></Login>
+                },
+                {
+                    path: '/register',
+                    element: <Register></Register>
+                },
+
+
+            ]
     }
-   
+
 ])
 
 export default router;

@@ -6,7 +6,19 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Lottie from "lottie-react";
 import register from "../../assets/register.json"
+import { motion } from "framer-motion";
 
+
+const buttonVariants = {
+    hover: {
+      scale: 1.05,
+      transition: { duration: 0.3 },
+    },
+    tap: {
+      scale: 0.95,
+      transition: { duration: 0.3 },
+    },
+  };
 const Register = () => {
     const [registerError, setRegisterError] = useState('');
     const [showPassword, setShowPassword] = useState(false);
@@ -20,7 +32,7 @@ const Register = () => {
 
         const name = form.get('name');
         const photo = form.get('photo');
-        const email = form .get('email');
+        const email = form.get('email');
         const password = form.get('password');
 
         setRegisterError('');
@@ -66,7 +78,7 @@ const Register = () => {
         <div className="flex flex-col md:flex-row">
             {/* Left Column with Animation (Replace with your animation content) */}
             <div className="md:w-1/2 lg:w-1/2 hidden md:flex lottie flex-1  mx-20" >
-               <Lottie animationData={register} loop={false}></Lottie>
+                <Lottie animationData={register} loop={false}></Lottie>
             </div>
 
             {/* Right Column */}
@@ -111,8 +123,15 @@ const Register = () => {
                         {registerError && <p className="text-red-700">{registerError}</p>}
                     </div>
                     <div className="form-control mt-6">
-                        <button className="btn btn-primary">Register</button>
-                    </div>
+          <motion.button
+            className="btn btn-primary"
+            variants={buttonVariants}
+            whileHover="hover"
+            whileTap="tap"
+          >
+            Register
+          </motion.button>
+        </div>
                 </form>
 
                 <p className="text-center mt-4">
