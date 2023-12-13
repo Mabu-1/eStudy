@@ -1,9 +1,11 @@
-# React + Vite
+
 Live link:(https://estudy-33d78.web.app/)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+##Unique Features
 
-Currently, two official plugins are available:
+- There is a filter option for user.Where user can see all assignment or filter it to easy to hard.
+- User need to login if user want to take assignmnet.
+- Only The Creator of the Assignment can update,delete or mark the assignmnet.
+- There Goto Top option button upon clicking on it user can go to top of the page.
+- While register a user can give the image he want to use.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
